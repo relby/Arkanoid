@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="assets\alien.gif" />
+    <None Remove="assets\ball.png" />
+    <None Remove="assets\logo.png" />
+    <None Remove="assets\platform.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\platform.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WpfAnimatedGif" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="assets\alien.gif" />
+    <Resource Include="assets\ball.png" />
+    <Resource Include="assets\logo.png" />
+  </ItemGroup>
+
+</Project>
