@@ -26,8 +26,7 @@ namespace Arkanoid
             this.rect.Margin = new Thickness(x, y, 0, 0);
             this.rect.HorizontalAlignment = HorizontalAlignment.Left;
             this.rect.VerticalAlignment = VerticalAlignment.Top;
-            this.rect.Fill = new SolidColorBrush(Colors.Magenta);
-            this.rect.Stroke = new SolidColorBrush(Colors.Black);
+            this.rect.SetResourceReference(Rectangle.FillProperty, "Brick");
             // Add rectagle to the grid
             this.grid.Children.Add(rect);
         }

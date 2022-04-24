@@ -33,8 +33,6 @@ namespace Arkanoid
             this.rect.VerticalAlignment = VerticalAlignment.Top;
             this.rect.SetResourceReference(Rectangle.FillProperty, "Ball");
             // Add rectangle to the grid
-            Debug.WriteLine(grid.Height);
-            Debug.WriteLine(this.grid.Width);
             this.grid.Children.Add(rect);
 
             this.velocityX = velocity;

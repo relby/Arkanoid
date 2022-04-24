@@ -4,15 +4,48 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Arkanoid"
+        xmlns:components="clr-namespace:Arkanoid.components"
         mc:Ignorable="d"
         x:Name="window"
         Title="MainWindow" Height="800" Width="1200" ResizeMode="NoResize" KeyDown="window_KeyDown" KeyUp="window_KeyUp">
     <Grid>
-        <Border HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="1030" Background="Yellow"/>
-        <Border HorizontalAlignment="Left" Height="1200" Margin="0,0,0,0" VerticalAlignment="Top" Width="30" Background="Yellow"/>
-        <Border HorizontalAlignment="Left" Height="1200" Margin="1030,0,0,0" VerticalAlignment="Top" Width="170" Background="Yellow"/>
-        <Grid x:Name="grid" Height="750" Width="1000" Margin="30,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Background="#FFFDC1C1" >
-            
+        <Border HorizontalAlignment="Left" Height="30" Margin="30,0,0,0" VerticalAlignment="Top" Width="1000">
+            <Border.Background>
+                <ImageBrush ImageSource="/assets/border_horizontal.png"/>
+            </Border.Background>
+
+        </Border>
+        <Border HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="30">
+            <Border.Background>
+                <ImageBrush ImageSource="/assets/border_corner_left.png"/>
+            </Border.Background>
+
+        </Border>
+        <Border HorizontalAlignment="Left" Height="800" Margin="0,30,0,0" VerticalAlignment="Top" Width="30">
+            <Border.Background>
+                <ImageBrush ImageSource="/assets/border_vertical.png"/>
+            </Border.Background>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="30" Margin="1030,0,0,0" VerticalAlignment="Top" Width="30">
+            <Border.Background>
+                <ImageBrush ImageSource="/assets/border_corner_right.png"/>
+            </Border.Background>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="800" Margin="1030,30,0,0" VerticalAlignment="Top" Width="30">
+            <Border.Background>
+                <ImageBrush ImageSource="/assets/border_vertical.png"/>
+            </Border.Background>
+        </Border>
+        <Border HorizontalAlignment="Left" Height="800" Margin="1060,0,0,0" VerticalAlignment="Top" Width="170">
+            <Border.Background>
+                <ImageBrush ImageSource="/assets/background_menu.png"/>
+            </Border.Background>
+            <Label x:Name="lifes_label" Content="Lifes" HorizontalAlignment="Left" Height="100" FontSize="40" Foreground="White" FontFamily="Bahnschrift SemiBold Condensed" Margin="13,350,0,350" />
+        </Border>
+        <Grid x:Name="grid" Height="750" Width="1000" Margin="30,30,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" >
+            <Grid.Background>
+                <ImageBrush ImageSource="/assets/background.png"/>
+            </Grid.Background>
         </Grid>
     </Grid>
 

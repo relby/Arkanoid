@@ -17,7 +17,7 @@ namespace Arkanoid
         private Rectangle rect;
         private double velocity;
 
-        public Platform(Grid grid, double width=96, double height=16, double velocity=10)
+        public Platform(Grid grid, double width=120, double height=16, double velocity=10)
         {
             this.grid = grid;
             // Create rectangle

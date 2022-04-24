@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using Arkanoid.components;
 
 namespace Arkanoid
 {
@@ -27,14 +28,38 @@ namespace Arkanoid
         List<Brick> bricks;
         Platform platform;
 
+        int lifes;
+
         bool LeftMouseKeyPressed = false;
         bool RightMouseKeyPressed = false;
         bool GameStarted = false;
+
+        private void CreateEndGameDialog(string text)
+        {
+            EndGameDialog endGameDialog = new EndGameDialog();
+            endGameDialog.Text = text;
+            bool res = endGameDialog.ShowDialog() == true;
+            if (res)
+            {
+                MainWindow mw = new MainWindow();
+                mw.Show();
+            }
+            else
+            {
+                MainMenu mm = new MainMenu();
+                mm.Show();
+            }
+            timer.Stop();
+            Close();
+        }
+
         public MainWindow()
         {
+            lifes = 3;
+
             InitializeComponent();
-            InitTimer();
             CreateObjects();
+            InitTimer();
         }
         public void InitTimer()
         {
@@ -48,7 +73,17 @@ namespace Arkanoid
         {
             if (LeftMouseKeyPressed) this.platform.MoveLeft();
             else if (RightMouseKeyPressed) this.platform.MoveRight();
-
+            lifes_label.Content = $"Lifes: {lifes}";
+            int brick_count = 0;
+            foreach (Rectangle rect in grid.Children)
+            {
+                if (rect.Name == "Brick") brick_count++;
+            }
+            if (brick_count == 0)
+            {
+                CreateEndGameDialog("You Won!");
+                return;
+            }
             if (GameStarted)
             {
                 bool isLost = this.ball.Move();
@@ -56,6 +91,12 @@ namespace Arkanoid
                 {
                     this.ball.SetPos(this.platform);
                     GameStarted = false;
+                    lifes--;
+                    if (lifes < 0)
+                    {
+                        CreateEndGameDialog("You Lost!");
+                        return;
+                    }
                 }
             }
             else
@@ -71,12 +112,12 @@ namespace Arkanoid
             this.bricks = new List<Brick>();
             double width = 100;
             double height = 50;
-            double x = 200;
-            double y = 200;
+            double x = 100;
+            double y = 100;
 
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < 8; i++)
             {
-                for (int j = 0; j < 3; j++)
+                for (int j = 0; j < 4; j++)
                 {
                     this.bricks.Add(new Brick(grid, width, height, x + width * i, y + height * j));
                 }

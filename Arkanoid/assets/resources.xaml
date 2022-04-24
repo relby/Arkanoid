@@ -2,6 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <ImageBrush x:Key="Ball" ImageSource="ball.png"/>
     <ImageBrush x:Key="Platform" ImageSource="platform.png"/>
+    <ImageBrush x:Key="Brick" ImageSource="brick.png"/>
     <BitmapImage x:Key="Logo" UriSource="logo.png"/>
     <BitmapImage x:Key="Alien" UriSource="alien.gif"/>
     <Style TargetType="Button">

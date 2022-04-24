@@ -9,12 +9,26 @@
 
   <ItemGroup>
     <None Remove="assets\alien.gif" />
+    <None Remove="assets\background.png" />
+    <None Remove="assets\background_menu.png" />
     <None Remove="assets\ball.png" />
+    <None Remove="assets\border_corner_left.png" />
+    <None Remove="assets\border_corner_right.png" />
+    <None Remove="assets\border_horizontal.png" />
+    <None Remove="assets\border_vertical.png" />
+    <None Remove="assets\brick.png" />
     <None Remove="assets\logo.png" />
     <None Remove="assets\platform.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="assets\background.png" />
+    <Resource Include="assets\background_menu.png" />
+    <Resource Include="assets\border_corner_left.png" />
+    <Resource Include="assets\border_corner_right.png" />
+    <Resource Include="assets\border_horizontal.png" />
+    <Resource Include="assets\border_vertical.png" />
+    <Resource Include="assets\brick.png" />
     <Resource Include="assets\platform.png" />
   </ItemGroup>
 
